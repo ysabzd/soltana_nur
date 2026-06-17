@@ -1,7 +1,16 @@
 import Link from "next/link";
 import { footerNav } from "@/lib/content/navigation";
-import { SITE_NAME, SITE_TAGLINE, SOCIAL_LINKS } from "@/lib/constants";
+import { getSettings } from "@/lib/cms";
+import { getSocialLinks } from "@/lib/constants";
 import { WhatsAppCTA } from "@/components/ui/WhatsAppCTA";
+
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z" />
+    </svg>
+  );
+}
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -21,29 +30,17 @@ function LinkedInIcon({ className }: { className?: string }) {
   );
 }
 
-function TikTokIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
-      aria-hidden
-    >
-      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z" />
-    </svg>
-  );
-}
+export async function Footer() {
+  const settings = await getSettings();
+  const social = getSocialLinks(settings);
 
-export function Footer() {
   return (
     <footer className="bg-espresso text-cream">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <p className="font-display text-3xl md:text-4xl">
-              {SITE_NAME}
-            </p>
-            <p className="mt-2 text-sm text-cream/70">{SITE_TAGLINE}</p>
+            <p className="font-display text-3xl md:text-4xl">{settings.siteName}</p>
+            <p className="mt-2 text-sm text-cream/70">{settings.siteTagline}</p>
             <p className="mt-6 max-w-md text-base leading-relaxed text-cream/80">
               Connais ta valeur. Deviens impossible à ignorer. De la valeur
               réelle à la valeur perçue — pour les femmes qui choisissent
@@ -51,6 +48,7 @@ export function Footer() {
             </p>
             <div className="mt-8">
               <WhatsAppCTA
+                settings={settings}
                 label="Rejoins les Pussycat Queens"
                 className="!text-sm"
               />
@@ -77,21 +75,21 @@ export function Footer() {
             <p className="eyebrow mb-4 text-xs text-gold">Réseaux</p>
             <div className="flex gap-4">
               <a
-                href={SOCIAL_LINKS.instagram}
+                href={social.instagram}
                 aria-label="Instagram"
                 className="rounded-full border border-cream/20 p-3 transition-colors hover:border-gold hover:text-gold"
               >
                 <InstagramIcon className="h-5 w-5" />
               </a>
               <a
-                href={SOCIAL_LINKS.linkedin}
+                href={social.linkedin}
                 aria-label="LinkedIn"
                 className="rounded-full border border-cream/20 p-3 transition-colors hover:border-gold hover:text-gold"
               >
                 <LinkedInIcon className="h-5 w-5" />
               </a>
               <a
-                href={SOCIAL_LINKS.tiktok}
+                href={social.tiktok}
                 aria-label="TikTok"
                 className="rounded-full border border-cream/20 p-3 transition-colors hover:border-gold hover:text-gold"
               >
@@ -102,8 +100,8 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col gap-2 border-t border-cream/10 pt-8 text-xs text-cream/50 md:flex-row md:justify-between">
-          <p>© {new Date().getFullYear()} {SITE_NAME}. Tous droits réservés.</p>
-          <p>{SITE_TAGLINE}</p>
+          <p>© {new Date().getFullYear()} {settings.siteName}. Tous droits réservés.</p>
+          <p>{settings.siteTagline}</p>
         </div>
       </div>
     </footer>

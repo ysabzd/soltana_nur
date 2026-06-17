@@ -1,6 +1,6 @@
 import { Marquee } from "@/components/motion/Marquee";
-import { tickerPhrases } from "@/lib/content/navigation";
+import type { Settings } from "@/lib/cms";
 
-export function TickerSection() {
-  return <Marquee phrases={tickerPhrases} />;
+export function TickerSection({ phrases }: { phrases: Settings["tickerPhrases"] }) {
+  return <Marquee phrases={phrases} />;
 }

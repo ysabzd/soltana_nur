@@ -1,9 +1,9 @@
 import { createPageMetadata } from "@/lib/metadata";
+import { getAllBlogPosts, getFeaturedPost } from "@/lib/cms";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ArticleCard } from "@/components/ui/ArticleCard";
 import { EditorialArticleCard } from "@/components/ui/EditorialArticleCard";
-import { blogPosts, getFeaturedPost } from "@/lib/content/blog-posts";
 
 export const metadata = createPageMetadata({
   title: "Blog",
@@ -12,9 +12,9 @@ export const metadata = createPageMetadata({
   path: "/blog",
 });
 
-export default function BlogPage() {
-  const featured = getFeaturedPost();
-  const otherPosts = blogPosts.filter((p) => p.slug !== featured.slug);
+export default async function BlogPage() {
+  const [featured, allPosts] = await Promise.all([getFeaturedPost(), getAllBlogPosts()]);
+  const otherPosts = allPosts.filter((p) => p.slug !== featured.slug);
 
   return (
     <>

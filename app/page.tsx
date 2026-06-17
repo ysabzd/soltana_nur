@@ -7,19 +7,32 @@ import { AboutTeaserSection } from "@/components/sections/home/AboutTeaserSectio
 import { TestimonialsSection } from "@/components/sections/home/TestimonialsSection";
 import { BlogTeaserSection } from "@/components/sections/home/BlogTeaserSection";
 import { CommunityCTASection } from "@/components/sections/home/CommunityCTASection";
+import {
+  getHome,
+  getSettings,
+  getTestimonials,
+  getLatestPosts,
+} from "@/lib/cms";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const [home, settings, testimonials, posts] = await Promise.all([
+    getHome(),
+    getSettings(),
+    getTestimonials(),
+    getLatestPosts(3),
+  ]);
+
   return (
     <>
-      <HeroSection />
-      <TickerSection />
-      <ManifestoSection />
-      <PourQuiSection />
-      <ExperiencesSection />
-      <AboutTeaserSection />
-      <TestimonialsSection />
-      <BlogTeaserSection />
-      <CommunityCTASection />
+      <HeroSection content={home} />
+      <TickerSection phrases={settings.tickerPhrases} />
+      <ManifestoSection content={home} />
+      <PourQuiSection content={home} />
+      <ExperiencesSection content={home} />
+      <AboutTeaserSection content={home} />
+      <TestimonialsSection content={home} testimonials={testimonials} />
+      <BlogTeaserSection content={home} posts={posts} />
+      <CommunityCTASection content={home} settings={settings} />
     </>
   );
 }

@@ -2,7 +2,12 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/metadata";
-import { blogPosts, getBlogPost } from "@/lib/content/blog-posts";
+import {
+  getAllBlogPosts,
+  getBlogPost,
+  getBlogSlugs,
+  getSettings,
+} from "@/lib/cms";
 import { getBlogImage } from "@/lib/images";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { WhatsAppCTA } from "@/components/ui/WhatsAppCTA";
@@ -12,12 +17,13 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({ slug: post.slug }));
+  const slugs = await getBlogSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
-  const post = getBlogPost(slug);
+  const post = await getBlogPost(slug);
   if (!post) return {};
 
   return createPageMetadata({
@@ -29,19 +35,20 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function BlogArticlePage({ params }: Props) {
   const { slug } = await params;
-  const post = getBlogPost(slug);
+  const [post, allPosts, settings] = await Promise.all([
+    getBlogPost(slug),
+    getAllBlogPosts(),
+    getSettings(),
+  ]);
   if (!post) notFound();
 
-  const index = blogPosts.findIndex((p) => p.slug === slug);
+  const index = allPosts.findIndex((p) => p.slug === slug);
   const image = getBlogImage(slug, index);
 
   return (
     <article className="pt-32 pb-24 lg:pt-40">
       <header className="mx-auto max-w-3xl px-6 lg:px-10">
-        <Link
-          href="/blog"
-          className="link-underline text-sm text-terracotta"
-        >
+        <Link href="/blog" className="link-underline text-sm text-terracotta">
           ← Retour au blog
         </Link>
         <Eyebrow className="mt-8 mb-4">
@@ -55,9 +62,7 @@ export default async function BlogArticlePage({ params }: Props) {
         <h1 className="font-display text-4xl leading-tight text-espresso md:text-5xl lg:text-6xl text-balance">
           {post.title}
         </h1>
-        <p className="mt-6 text-xl leading-relaxed text-espresso/75">
-          {post.excerpt}
-        </p>
+        <p className="mt-6 text-xl leading-relaxed text-espresso/75">{post.excerpt}</p>
       </header>
 
       <div className="mx-auto mt-12 max-w-4xl px-6 lg:px-10">
@@ -99,19 +104,16 @@ export default async function BlogArticlePage({ params }: Props) {
                 Fondatrice, l&apos;École des Pussycat Queens™️
               </p>
               <p className="mt-3 text-base text-espresso/70">
-                Juriste, ESCP, 10 millions de repas sauvés. J&apos;enseigne aux
-                femmes brillantes à transformer leur valeur réelle en valeur
-                perçue.
+                Juriste, ESCP, 10 millions de repas sauvés. J&apos;enseigne aux femmes
+                brillantes à transformer leur valeur réelle en valeur perçue.
               </p>
             </div>
           </div>
         </aside>
 
         <div className="mt-16 text-center">
-          <p className="font-display text-2xl text-espresso">
-            Prête à aller plus loin ?
-          </p>
-          <WhatsAppCTA className="mt-6" />
+          <p className="font-display text-2xl text-espresso">Prête à aller plus loin ?</p>
+          <WhatsAppCTA settings={settings} className="mt-6" />
         </div>
       </div>
     </article>

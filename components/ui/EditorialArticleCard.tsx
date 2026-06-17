@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import type { BlogPost } from "@/lib/content/blog-posts";
+import type { BlogPost } from "@/lib/cms";
 import { getBlogImage } from "@/lib/images";
 
 export function EditorialArticleCard({

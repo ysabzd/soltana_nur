@@ -2,27 +2,31 @@ import Link from "next/link";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { EditorialArticleCard } from "@/components/ui/EditorialArticleCard";
-import { getLatestPosts } from "@/lib/content/blog-posts";
+import type { BlogPost, HomeContent } from "@/lib/cms";
 
-export function BlogTeaserSection() {
-  const posts = getLatestPosts(3);
-
+export function BlogTeaserSection({
+  content,
+  posts,
+}: {
+  content: HomeContent;
+  posts: BlogPost[];
+}) {
   return (
     <section className="border-t border-espresso/10 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <ScrollReveal>
             <SectionHeading
-              eyebrow="Blog"
-              title="Penser différemment"
-              description="Réflexions sur la valeur perçue, la souveraineté et le choix."
+              eyebrow={content.blogEyebrow}
+              title={content.blogTitle}
+              description={content.blogDescription}
             />
           </ScrollReveal>
           <Link
             href="/blog"
             className="link-underline shrink-0 text-sm font-medium text-terracotta"
           >
-            Voir tous les articles →
+            {content.blogCta}
           </Link>
         </div>
 

@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "./constants";
+
+const SITE_NAME = "Soltana Nur";
+const SITE_TAGLINE = "l'École des Pussycat Queens™️";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://soltananur.com";
 
 type PageMetadataOptions = {
   title: string;

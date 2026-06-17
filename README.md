@@ -18,24 +18,53 @@ npm start       # Start production server
 
 ## Configuration
 
-### WhatsApp contact
+### Keystatic CMS (édition du contenu)
 
-Edit [`lib/constants.ts`](lib/constants.ts):
+Le contenu éditable (textes, prix, témoignages, articles de blog) est géré par [Keystatic](https://keystatic.com/).
 
-- `WHATSAPP_NUMBER` — international format without `+` (e.g. `33612345678`)
-- `WHATSAPP_MESSAGE` — default pre-filled message
+**En local :**
 
-### Social links
+```bash
+npm run dev
+```
 
-Edit `SOCIAL_LINKS` in [`lib/constants.ts`](lib/constants.ts).
+Ouvre [http://localhost:3000/keystatic](http://localhost:3000/keystatic) pour modifier le contenu. Les changements sont enregistrés dans le dossier `content/`.
 
-### Pricing placeholders
+**Fichiers de contenu :**
 
-Edit `PRICING` in [`lib/constants.ts`](lib/constants.ts).
+| Fichier / dossier | Contenu |
+|-------------------|---------|
+| `content/settings.yaml` | WhatsApp, réseaux sociaux, prix |
+| `content/home.yaml` | Page d'accueil |
+| `content/about.yaml` | Qui je suis |
+| `content/formation.yaml` | Formation en ligne |
+| `content/coaching.yaml` | Coaching 1:1 |
+| `content/retreats.yaml` | aMuse Retreats |
+| `content/rejoindre.yaml` | Rejoindre |
+| `content/testimonials/` | Témoignages |
+| `content/blog/` | Articles de blog |
+
+**En production (GitHub mode) :** définir ces variables d'environnement sur Vercel pour que la cliente édite directement depuis `/keystatic` :
+
+```
+KEYSTATIC_GITHUB_OWNER=ysabzd
+KEYSTATIC_GITHUB_REPO=soltana_nur
+```
+
+Sans ces variables, Keystatic utilise le stockage local (développement uniquement).
+
+### WhatsApp, réseaux sociaux et prix
+
+Éditer `content/settings.yaml` via Keystatic ou directement dans le fichier :
+
+- `whatsappNumber` — format international sans `+` (ex. `33612345678`)
+- `whatsappMessage` — message pré-rempli par défaut
+- `instagram`, `linkedin`, `tiktok` — liens réseaux sociaux
+- `priceFormation`, `priceCoaching`, formules membership — tarifs affichés
 
 ### Site URL (SEO / OpenGraph)
 
-Edit `SITE_URL` in [`lib/constants.ts`](lib/constants.ts).
+Définir `NEXT_PUBLIC_SITE_URL` en variable d'environnement, ou éditer `siteUrl` dans `content/settings.yaml`.
 
 ## Replacing images
 
@@ -87,19 +116,21 @@ If using external URLs, add the hostname to `images.remotePatterns` in [`next.co
 | `/blog` | Blog index |
 | `/blog/[slug]` | Article template |
 | `/rejoindre` | Community / school landing + WhatsApp CTA |
+| `/keystatic` | Admin CMS (édition du contenu) |
 
 ## Project structure
 
 ```
 app/           — Pages (App Router)
 components/    — UI, layout, motion, home sections
-lib/           — Images, constants, content, motion tokens
+lib/           — Images, CMS reader, helpers, motion tokens
+content/       — YAML éditable via Keystatic
 providers/     — Lenis smooth scroll provider
 ```
 
 ## French copy
 
-All user-facing copy lives in `lib/content/` and page components. Comments and code are in English.
+All user-facing copy lives in `content/` (Keystatic) and is loaded via `lib/cms/`. Navigation structure stays in `lib/content/navigation.ts`. Comments and code are in English.
 
 ## Motion & accessibility
 
