@@ -58,7 +58,6 @@ export default function RejoindrePage() {
             </div>
             <CollageImage
               image={REJOINDRE_1}
-              rotation={2}
               parallax
               priority
               className="aspect-[4/5] w-full"
@@ -93,18 +92,15 @@ export default function RejoindrePage() {
           <div className="grid gap-6 md:grid-cols-3">
             <CollageImage
               image={REJOINDRE_1}
-              rotation={-1}
               className="aspect-[4/5] w-full"
             />
             <CollageImage
               image={REJOINDRE_2}
-              rotation={1.5}
               parallax
               className="aspect-[4/5] w-full md:mt-12"
             />
             <CollageImage
               image={REJOINDRE_3}
-              rotation={-2}
               className="aspect-[4/5] w-full"
             />
           </div>

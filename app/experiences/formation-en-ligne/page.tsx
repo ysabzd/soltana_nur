@@ -39,7 +39,6 @@ export default function FormationPage() {
             </div>
             <CollageImage
               image={FORMATION_HERO}
-              rotation={-1.5}
               parallax
               className="aspect-[4/5] w-full"
             />

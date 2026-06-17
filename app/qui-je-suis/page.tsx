@@ -96,19 +96,16 @@ export default function QuiJeSuisPage() {
             <div className="lg:col-span-5 space-y-6">
               <CollageImage
                 image={ABOUT_1}
-                rotation={2}
                 parallax
                 className="aspect-[4/5] w-full"
               />
               <div className="grid grid-cols-2 gap-4">
                 <CollageImage
                   image={ABOUT_2}
-                  rotation={-2}
                   className="aspect-[4/5] w-full"
                 />
                 <CollageImage
                   image={ABOUT_3}
-                  rotation={1}
                   className="aspect-[4/5] w-full mt-8"
                 />
               </div>

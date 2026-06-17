@@ -11,7 +11,6 @@ export function AboutTeaserSection() {
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <CollageImage
             image={ABOUT_1}
-            rotation={-1.5}
             parallax
             className="aspect-[4/5] w-full"
           />

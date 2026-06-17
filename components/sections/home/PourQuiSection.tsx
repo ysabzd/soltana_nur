@@ -18,7 +18,7 @@ export function PourQuiSection() {
           <ScrollReveal stagger className="lg:col-span-8 space-y-6">
             {pourQuiCards.map((card) => (
               <ScrollRevealItem key={card.title}>
-                <article className="border border-cream/10 p-8 transition-all duration-500 hover:border-gold/50 hover:shadow-lg md:p-10">
+                <article className="border border-cream/10 bg-espresso-light/30 p-8 transition-all duration-500 hover:border-gold/40 hover:shadow-lg md:p-10">
                   <h3 className="font-display text-2xl text-cream md:text-3xl">
                     {card.title}
                   </h3>

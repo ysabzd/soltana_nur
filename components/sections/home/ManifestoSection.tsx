@@ -5,7 +5,7 @@ import { MANIFESTO_1, MANIFESTO_2 } from "@/lib/images";
 
 export function ManifestoSection() {
   return (
-    <section className="py-24 lg:py-32">
+    <section className="bg-cream-dark py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">
@@ -28,13 +28,11 @@ export function ManifestoSection() {
           <div className="space-y-8">
             <CollageImage
               image={MANIFESTO_1}
-              rotation={-2}
               parallax
-              className="aspect-[3/4] w-full max-w-md"
+              className="aspect-[16/10] w-full"
             />
             <CollageImage
               image={MANIFESTO_2}
-              rotation={1.5}
               parallax
               borderColor="espresso"
               className="aspect-[3/4] ml-auto w-full max-w-xs"

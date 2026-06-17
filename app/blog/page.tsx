@@ -2,6 +2,7 @@ import { createPageMetadata } from "@/lib/metadata";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ArticleCard } from "@/components/ui/ArticleCard";
+import { EditorialArticleCard } from "@/components/ui/EditorialArticleCard";
 import { blogPosts, getFeaturedPost } from "@/lib/content/blog-posts";
 
 export const metadata = createPageMetadata({
@@ -35,12 +36,17 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="pb-24">
+      <section className="border-t border-espresso/10 pb-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-            {otherPosts.map((post, i) => (
+          <div className="grid gap-12 md:grid-cols-3 md:gap-0">
+            {otherPosts.slice(0, 3).map((post, i) => (
               <ScrollReveal key={post.slug} delay={i * 0.08}>
-                <ArticleCard post={post} index={i + 1} />
+                <EditorialArticleCard
+                  post={post}
+                  index={i + 1}
+                  showDivider={i < 2}
+                  className={i > 0 ? "md:pl-10 lg:pl-12" : undefined}
+                />
               </ScrollReveal>
             ))}
           </div>

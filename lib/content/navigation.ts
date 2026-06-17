@@ -21,6 +21,14 @@ export const footerNav = [
   { label: "Rejoindre", href: "/rejoindre" },
 ] as const;
 
+export const categoryNav = [
+  { label: "Qui je suis", href: "/qui-je-suis" },
+  { label: "Formation", href: "/experiences/formation-en-ligne" },
+  { label: "Coaching", href: "/experiences/coaching" },
+  { label: "Retreats", href: "/amuse-retreats" },
+  { label: "Blog", href: "/blog" },
+] as const;
+
 export const tickerPhrases = [
   "Now Booking",
   "Limited Spots",

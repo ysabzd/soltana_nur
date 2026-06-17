@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Fraunces, Inter, Roboto_Slab } from "next/font/google";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { GrainOverlay } from "@/components/layout/GrainOverlay";
@@ -12,6 +12,13 @@ const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
   style: ["normal", "italic"],
+});
+
+const robotoSlab = Roboto_Slab({
+  variable: "--font-roboto-slab",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "700", "900"],
 });
 
 const inter = Inter({
@@ -28,7 +35,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${fraunces.variable} ${inter.variable} h-full`}>
+    <html
+      lang="fr"
+      className={`${fraunces.variable} ${robotoSlab.variable} ${inter.variable} h-full`}
+    >
       <body className="min-h-full bg-cream font-sans text-espresso antialiased">
         <a href="#main-content" className="skip-link">
           Aller au contenu principal

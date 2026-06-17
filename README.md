@@ -43,12 +43,12 @@ All images are centralized in [`lib/images.ts`](lib/images.ts). Replace each `sr
 
 | Constant | Page / Section | Recommended size | Orientation |
 |----------|----------------|------------------|-------------|
-| `HERO_PORTRAIT` | Home — Hero | 800 × 1000 | Portrait |
-| `MANIFESTO_1` | Home — Manifesto | 600 × 800 | Portrait |
-| `MANIFESTO_2` | Home — Manifesto | 500 × 650 | Portrait |
-| `EXPERIENCE_FORMATION` | Home — Expériences card | 700 × 900 | Portrait |
-| `EXPERIENCE_COACHING` | Home — Expériences card | 650 × 850 | Portrait |
-| `EXPERIENCE_RETREAT` | Home — Expériences card | 750 × 950 | Portrait |
+| `HERO_PORTRAIT` | Home — Hero (full bleed) | 682 × 1024 | Portrait — pool & desert |
+| `MANIFESTO_1` | Home — Manifesto | 1024 × 682 | Landscape — red editorial |
+| `MANIFESTO_2` | Home — Manifesto | 682 × 1024 | Portrait — N&B |
+| `EXPERIENCE_FORMATION` | Home — Expériences | 682 × 1024 | Portrait — street |
+| `EXPERIENCE_COACHING` | Home — Expériences | 682 × 1024 | Portrait — N&B |
+| `EXPERIENCE_RETREAT` | Home — Expériences | 682 × 1024 | Portrait — retreat pool |
 | `ABOUT_1` | Home teaser + Qui je suis | 700 × 900 | Portrait |
 | `ABOUT_2` | Qui je suis — collage | 500 × 600 | Portrait |
 | `ABOUT_3` | Qui je suis — collage | 450 × 550 | Portrait |

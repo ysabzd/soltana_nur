@@ -43,9 +43,8 @@ export default function CoachingPage() {
             </div>
             <CollageImage
               image={COACHING_HERO}
-              rotation={1.5}
               parallax
-              className="aspect-[4/5] w-full"
+              className="aspect-[16/10] w-full"
             />
           </div>
         </div>

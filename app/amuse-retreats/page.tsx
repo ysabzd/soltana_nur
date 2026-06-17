@@ -35,10 +35,9 @@ export default function AmuseRetreatsPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <CollageImage
             image={RETREAT_HERO}
-            rotation={0}
             parallax
             priority
-            className="aspect-[16/9] w-full"
+            className="aspect-[4/5] w-full max-h-[80vh] md:aspect-[16/9]"
           />
         </div>
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
@@ -111,7 +110,6 @@ export default function AmuseRetreatsPage() {
               <CollageImage
                 key={img.src}
                 image={img}
-                rotation={i % 2 === 0 ? 1.5 : -1.5}
                 parallax={i < 3}
                 className="aspect-[4/5] w-full"
               />
