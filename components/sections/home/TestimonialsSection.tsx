@@ -26,10 +26,16 @@ export function TestimonialsSection({
             className="mb-16"
           />
         </ScrollReveal>
-        <ScrollReveal stagger className="grid gap-16 md:grid-cols-2 lg:grid-cols-3">
+        <ScrollReveal stagger className="grid gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
           {testimonials.map((t) => (
             <ScrollRevealItem key={t.author}>
-              <TestimonialQuote quote={t.quote} author={t.author} role={t.role} />
+              <TestimonialQuote
+                quote={t.quote}
+                author={t.author}
+                role={t.role}
+                size="compact"
+                showStars
+              />
             </ScrollRevealItem>
           ))}
         </ScrollReveal>

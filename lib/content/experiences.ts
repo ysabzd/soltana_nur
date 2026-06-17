@@ -9,7 +9,7 @@ export const experiences = [
   {
     title: "Coaching 1:1",
     description:
-      "Un espace où la pleine conscience rencontre la maîtrise. Toi, ta vision, ta souveraineté — sans filtre.",
+      "Un espace où la pleine conscience rencontre la maîtrise. Toi, ta vision, ta souveraineté, sans filtre.",
     href: "/experiences/coaching",
     eyebrow: "Intime",
   },
@@ -24,7 +24,7 @@ export const experiences = [
 
 export const pourQuiCards = [
   {
-    title: "Tu es brillante — et tu le minimises",
+    title: "Tu es brillante, et tu le minimises",
     description:
       "Tu sais ce que tu vaux, mais tu le dis à voix basse. Tu attends qu'on te remarque au lieu de rayonner.",
   },
@@ -36,6 +36,6 @@ export const pourQuiCards = [
   {
     title: "Tu veux être impossible à ignorer",
     description:
-      "Pas plus bruyante — plus magnétique. Présente, assumée, souveraine. Incarnée.",
+      "Pas plus bruyante, plus magnétique. Présente, assumée, souveraine. Incarnée.",
   },
 ] as const;

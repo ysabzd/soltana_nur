@@ -14,14 +14,14 @@ export const blogPosts: BlogPost[] = [
     slug: "pourquoi-ta-valeur-percue-change-tout",
     title: "Pourquoi ta valeur perçue change tout",
     excerpt:
-      "La valeur réelle ne suffit pas. Ce que les autres voient, ressentent, désirent — c'est ce qui ouvre les portes.",
+      "La valeur réelle ne suffit pas. Ce que les autres voient, ressentent, désirent, c'est ce qui ouvre les portes.",
     date: "2026-05-12",
     readTime: "6 min",
     featured: true,
     pullQuote: "Ce n'est pas du bluff. C'est de l'incarnation.",
     content: [
       "Tu as le CV. Les compétences. Les résultats. Et pourtant, quelque chose ne colle pas. Tu n'es pas vue à ta juste mesure.",
-      "La valeur perçue, ce n'est pas mentir sur qui tu es. C'est honorer ce que tu apportes — et le faire sentir avant même que tu parles.",
+      "La valeur perçue, ce n'est pas mentir sur qui tu es. C'est honorer ce que tu apportes, et le faire sentir avant même que tu parles.",
       "J'ai appris ça en construisant une association de zéro : 10 millions de repas sauvés, 1 000 partenaires. Pas avec plus de preuves. Avec plus de présence.",
       "Commence par arrêter de minimiser. Choisis un moment cette semaine où tu ne t'excuseras pas de ton expertise. Observe ce qui change.",
     ],
@@ -37,7 +37,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       "Combien de fois cette semaine as-tu adouci une demande avant de la formuler ? Combien de fois as-tu attendu un signe au lieu de décider ?",
       "Demander la permission, c'est externaliser ton pouvoir. C'est croire que quelqu'un d'autre doit valider ce que tu sais déjà.",
-      "Les Pussycat Queens ne sont pas des femmes qui crient plus fort. Ce sont des femmes qui choisissent — avec clarté, présence, désir assumé.",
+      "Les Pussycat Queens ne sont pas des femmes qui crient plus fort. Ce sont des femmes qui choisissent, avec clarté, présence, désir assumé.",
       "Exercice : écris une décision que tu repousses. Formule-la sans excuse, sans justification. Puis agis dans les 48 heures.",
     ],
   },
@@ -50,7 +50,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "7 min",
     content: [
       "La présence magnétique n'est pas du volume. C'est de la densité. Chaque mot compte parce que tu es entièrement là.",
-      "Avant ta prochaine réunion : trois respirations. Épaules basses. Regard stable. Tu n'es pas là pour convaincre — tu es là pour incarner.",
+      "Avant ta prochaine réunion : trois respirations. Épaules basses. Regard stable. Tu n'es pas là pour convaincre, tu es là pour incarner.",
       "Quand tu parles, termine ta phrase. Ne monte pas en fin de phrase. Ne demande pas pardon avec ton intonation.",
       "Les femmes qui changent les dynamiques ne dominent pas la pièce. Elles la réorganisent.",
     ],
@@ -59,13 +59,13 @@ export const blogPosts: BlogPost[] = [
     slug: "negocier-sans-te-trahir",
     title: "Négocier sans te trahir",
     excerpt:
-      "La négociation n'est pas un combat. C'est un acte de respect — envers toi d'abord.",
+      "La négociation n'est pas un combat. C'est un acte de respect, envers toi d'abord.",
     date: "2026-03-22",
     readTime: "8 min",
     pullQuote: "Honorer ta valeur, ce n'est pas être inflexible. C'est ne plus te trahir.",
     content: [
       "Tu as probablement appris à négocier en te réduisant. À proposer moins pour éviter le rejet. À accepter vite pour ne pas déplaire.",
-      "Négocier sans te trahir, c'est connaître ton plancher avant d'entrer dans la pièce. C'est savoir ce que tu refuses — pas seulement ce que tu veux.",
+      "Négocier sans te trahir, c'est connaître ton plancher avant d'entrer dans la pièce. C'est savoir ce que tu refuses, pas seulement ce que tu veux.",
       "Prépare trois chiffres : ton idéal, ton acceptable, ton plancher. Si on touche au plancher, tu choisis de partir. Sans drame. Avec souveraineté.",
     ],
   },
@@ -96,7 +96,7 @@ export const blogPosts: BlogPost[] = [
       "À 30 ans, j'avais une décennie de preuves derrière moi. Juriste. ESCP. Première salariée d'une association qui est passée de 0 à 20 personnes.",
       "Et pourtant, j'observais le même schéma : des femmes extraordinaires qui minimisaient leur talent, négociaient leurs désirs, attendaient qu'on les voie.",
       "L'École des Pussycat Queens est née de cette conviction : une femme qui connaît sa valeur devient impossible à ignorer. Elle ne demande plus la permission. Elle choisit.",
-      "Ce n'est pas un cours de confiance en soi. C'est un espace pour incarner ta souveraineté — magnétique, assumée, sans compromis.",
+      "Ce n'est pas un cours de confiance en soi. C'est un espace pour incarner ta souveraineté, magnétique, assumée, sans compromis.",
     ],
   },
 ];

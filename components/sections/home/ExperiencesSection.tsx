@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
-import { CategoryNav } from "@/components/layout/CategoryNav";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import {
   EXPERIENCE_FORMATION,
@@ -18,15 +17,14 @@ const experienceImages = [
 
 export function ExperiencesSection({ content }: { content: HomeContent }) {
   return (
-    <section className="bg-moss-deep py-16 text-cream lg:py-24">
+    <section className="bg-espresso py-16 text-cream lg:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <CategoryNav light className="mb-12" />
         <ScrollReveal>
           <SectionHeading
             eyebrow={content.experiencesEyebrow}
             title={content.experiencesTitle}
             description={content.experiencesDescription}
-            className="mb-16 [&_h2]:text-cream [&_p]:text-cream/70"
+            className="mb-16 [&_.eyebrow]:text-cream/80 [&_h2]:text-cream [&_p]:text-cream/85"
           />
         </ScrollReveal>
 
@@ -44,14 +42,14 @@ export function ExperiencesSection({ content }: { content: HomeContent }) {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-espresso/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 </div>
-                <p className="eyebrow text-xs text-gold">{exp.eyebrow}</p>
+                <p className="eyebrow text-xs text-cream/80">{exp.eyebrow}</p>
                 <h3 className="font-display mt-2 text-2xl text-cream transition-colors group-hover:text-gold md:text-3xl">
                   {exp.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-cream/70">
+                <p className="mt-3 text-sm leading-relaxed text-cream/85">
                   {exp.description}
                 </p>
-                <span className="link-underline link-underline-light mt-4 inline-block text-sm text-gold/80">
+                <span className="link-underline link-underline-light mt-4 inline-block text-sm font-medium text-cream hover:text-gold">
                   Découvrir →
                 </span>
               </Link>

@@ -1,7 +1,7 @@
 export const testimonials = [
   {
     quote:
-      "Avant, je négociais mes désirs avant même de les formuler. Aujourd'hui, je choisis. Ma présence a changé — et mes résultats aussi.",
+      "Avant, je négociais mes désirs avant même de les formuler. Aujourd'hui, je choisis. Ma présence a changé, et mes résultats aussi.",
     author: "Camille R.",
     role: "Directrice marketing",
   },

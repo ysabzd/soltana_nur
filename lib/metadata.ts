@@ -40,11 +40,11 @@ export function createPageMetadata({
 
 export const defaultMetadata: Metadata = {
   title: {
-    default: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    default: `${SITE_NAME} | ${SITE_TAGLINE}`,
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Connais ta valeur. Deviens impossible à ignorer. L'École des Pussycat Queens™️ — de la valeur réelle à la valeur perçue.",
+    "Connais ta valeur. Deviens impossible à ignorer. L'École des Pussycat Queens™️, de la valeur réelle à la valeur perçue.",
   metadataBase: new URL(SITE_URL),
   openGraph: {
     locale: "fr_FR",

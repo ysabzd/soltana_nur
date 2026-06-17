@@ -49,13 +49,6 @@ export function HeroSection({ content }: { content: HomeContent }) {
           </Link>
         </div>
       </div>
-
-      <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 gap-2" aria-hidden>
-        <span className="h-1.5 w-6 rounded-full bg-gold" />
-        <span className="h-1.5 w-1.5 rounded-full bg-cream/30" />
-        <span className="h-1.5 w-1.5 rounded-full bg-cream/30" />
-        <span className="h-1.5 w-1.5 rounded-full bg-cream/30" />
-      </div>
     </section>
   );
 }

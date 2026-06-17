@@ -42,14 +42,12 @@ export async function Footer() {
             <p className="font-display text-3xl md:text-4xl">{settings.siteName}</p>
             <p className="mt-2 text-sm text-cream/70">{settings.siteTagline}</p>
             <p className="mt-6 max-w-md text-base leading-relaxed text-cream/80">
-              Connais ta valeur. Deviens impossible à ignorer. De la valeur
-              réelle à la valeur perçue — pour les femmes qui choisissent
-              d&apos;incarner leur souveraineté.
+              {settings.footerDescription}
             </p>
             <div className="mt-8">
               <WhatsAppCTA
                 settings={settings}
-                label="Rejoins les Pussycat Queens"
+                label={settings.footerWhatsappLabel}
                 className="!text-sm"
               />
             </div>

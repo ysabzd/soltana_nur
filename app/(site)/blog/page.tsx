@@ -8,7 +8,7 @@ import { EditorialArticleCard } from "@/components/ui/EditorialArticleCard";
 export const metadata = createPageMetadata({
   title: "Blog",
   description:
-    "Réflexions sur la valeur perçue, la souveraineté et le choix — par Soltana Nur.",
+    "Réflexions sur la valeur perçue, la souveraineté et le choix, par Soltana Nur.",
   path: "/blog",
 });
 
@@ -23,7 +23,7 @@ export default async function BlogPage() {
           <SectionHeading
             eyebrow="Blog"
             title="Penser différemment"
-            description="La valeur perçue, la souveraineté, le choix — en mots courts et incarnés."
+            description="La valeur perçue, la souveraineté, le choix, en mots courts et incarnés."
           />
         </div>
       </section>

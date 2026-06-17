@@ -2,7 +2,7 @@ export const formationFaq = [
   {
     question: "À qui s'adresse cette formation ?",
     answer:
-      "Aux femmes brillantes qui savent ce qu'elles valent mais peinent à le faire percevoir. Tu veux transformer ta valeur réelle en valeur perçue — sans te trahir.",
+      "Aux femmes brillantes qui savent ce qu'elles valent mais peinent à le faire percevoir. Tu veux transformer ta valeur réelle en valeur perçue, sans te trahir.",
   },
   {
     question: "Quel est le format ?",
@@ -12,7 +12,7 @@ export const formationFaq = [
   {
     question: "Combien de temps ai-je accès au contenu ?",
     answer:
-      "Accès illimité à vie. Tu peux revisiter les modules autant que nécessaire — la transformation demande de la répétition.",
+      "Accès illimité à vie. Tu peux revisiter les modules autant que nécessaire, la transformation demande de la répétition.",
   },
   {
     question: "Y a-t-il un accompagnement ?",
@@ -25,7 +25,7 @@ export const coachingFaq = [
   {
     question: "Pour qui est le coaching 1:1 ?",
     answer:
-      "Pour les femmes prêtes à un travail profond et personnalisé. Tu veux de la clarté, de la présence, et des résultats concrets — pas des généralités.",
+      "Pour les femmes prêtes à un travail profond et personnalisé. Tu veux de la clarté, de la présence, et des résultats concrets, pas des généralités.",
   },
   {
     question: "Comment se déroule une session ?",
@@ -41,27 +41,27 @@ export const coachingFaq = [
 
 export const formationModules = [
   {
-    title: "Module 1 — Connais ta valeur",
+    title: "Module 1 : Connais ta valeur",
     description:
       "Identifie ce que tu apportes vraiment. Arrête de minimiser. Construis ton récit de valeur.",
   },
   {
-    title: "Module 2 — Présence magnétique",
+    title: "Module 2 : Présence magnétique",
     description:
       "Corps, voix, regard. Incarne ta souveraineté avant même de parler.",
   },
   {
-    title: "Module 3 — Valeur perçue en action",
+    title: "Module 3 : Valeur perçue en action",
     description:
       "Personal branding éditorial, visibilité assumée, communication sans compromis.",
   },
   {
-    title: "Module 4 — Négociation souveraine",
+    title: "Module 4 : Négociation souveraine",
     description:
-      "Prix, contrats, limites. Négocie sans te trahir — avec clarté et désir.",
+      "Prix, contrats, limites. Négocie sans te trahir, avec clarté et désir.",
   },
   {
-    title: "Module 5 — Deviens impossible à ignorer",
+    title: "Module 5 : Deviens impossible à ignorer",
     description:
       "Intégration, rituels, plan d'action. Tu choisis. Tu rayonnes.",
   },
@@ -72,13 +72,13 @@ export const coachingSteps = [
     step: "01",
     title: "Clarté",
     description:
-      "On identifie ce qui te retient — les schémas, les peurs, les désirs non formulés.",
+      "On identifie ce qui te retient, les schémas, les peurs, les désirs non formulés.",
   },
   {
     step: "02",
     title: "Vision",
     description:
-      "Tu définis qui tu deviens. Pas qui tu « devrais » être — qui tu choisis d'être.",
+      "Tu définis qui tu deviens. Pas qui tu « devrais » être, qui tu choisis d'être.",
   },
   {
     step: "03",

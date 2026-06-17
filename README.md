@@ -66,6 +66,24 @@ Sans ces variables, Keystatic utilise le stockage local (développement uniqueme
 
 Définir `NEXT_PUBLIC_SITE_URL` en variable d'environnement, ou éditer `siteUrl` dans `content/settings.yaml`.
 
+### Avis Google Maps (page d'accueil)
+
+La section témoignages affiche les **avis Google réels** via la bibliothèque officielle Google Maps Platform.
+
+1. Créer une clé API sur [Google Cloud Console](https://console.cloud.google.com/google/maps-apis/start) et activer **Maps JavaScript API** et **Places API (New)**.
+2. Définir sur Vercel (ou en local dans `.env.local`) :
+
+```
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=votre_cle_api
+```
+
+3. Dans Keystatic → **Réglages du site** :
+   - `googleMapsReviewsUrl` — lien vers la fiche (déjà renseigné par défaut)
+   - `googlePlaceName` — nom du lieu pour la recherche automatique (`Soltana Nur`)
+   - `googlePlaceId` — optionnel ; si vide, le Place ID est résolu via Places API
+
+Sans clé API, un bouton renvoie vers Google Maps pour lire les avis.
+
 ## Replacing images
 
 All images are centralized in [`lib/images.ts`](lib/images.ts). Replace each `src` with your own file path (place in `/public/images/`) or external URL. Layout uses explicit dimensions — swapping images will not break grids.

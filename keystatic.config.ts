@@ -57,6 +57,24 @@ export default config({
         instagram: fields.text({ label: "Lien Instagram" }),
         linkedin: fields.text({ label: "Lien LinkedIn" }),
         tiktok: fields.text({ label: "Lien TikTok" }),
+        footerDescription: fields.text({
+          label: "Footer — texte de présentation",
+          multiline: true,
+        }),
+        footerWhatsappLabel: fields.text({ label: "Footer — bouton WhatsApp" }),
+        googleMapsReviewsUrl: fields.text({
+          label: "Google Maps — lien avis",
+          description: "Lien court ou URL complète vers la fiche Google (ex. maps.app.goo.gl/…)",
+        }),
+        googlePlaceId: fields.text({
+          label: "Google Place ID (optionnel)",
+          description:
+            "ChIJ… — laisser vide pour recherche automatique par nom. Trouvable via le Place ID Finder Google.",
+        }),
+        googlePlaceName: fields.text({
+          label: "Nom du lieu Google",
+          description: "Utilisé si le Place ID n’est pas renseigné (recherche Places API).",
+        }),
         priceFormation: fields.text({ label: "Prix formation" }),
         priceCoaching: fields.text({ label: "Prix coaching" }),
         priceCoachingLabel: fields.text({ label: "Libellé prix coaching" }),
@@ -121,6 +139,10 @@ export default config({
         aboutCta: fields.text({ label: "À propos — lien" }),
         testimonialsEyebrow: fields.text({ label: "Témoignages — eyebrow" }),
         testimonialsTitle: fields.text({ label: "Témoignages — titre" }),
+        testimonialsDescription: fields.text({
+          label: "Témoignages — description",
+          multiline: true,
+        }),
         blogEyebrow: fields.text({ label: "Blog — eyebrow" }),
         blogTitle: fields.text({ label: "Blog — titre" }),
         blogDescription: fields.text({ label: "Blog — description", multiline: true }),

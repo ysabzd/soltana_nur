@@ -53,7 +53,7 @@ export function Nav() {
         )}
       >
         <nav
-          className="relative mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-6 py-5 lg:px-10"
+          className="relative mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-4 sm:px-6 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-0 lg:px-10 lg:py-5"
           aria-label="Navigation principale"
         >
           <div className="hidden lg:block" aria-hidden />
@@ -61,19 +61,19 @@ export function Nav() {
           <Link
             href="/"
             className={cn(
-              "headline-slab text-center text-lg tracking-tight md:text-xl lg:text-2xl",
+              "headline-slab min-w-0 shrink text-left text-[0.8125rem] leading-none tracking-tight sm:text-lg lg:text-center lg:text-2xl",
               overlayMode ? "text-cream" : "text-espresso"
             )}
           >
             Soltana Nur
           </Link>
 
-          <div className="flex items-center justify-end gap-4 lg:gap-6">
+          <div className="flex shrink-0 items-center justify-end gap-2 sm:gap-4 lg:gap-6">
             <Button
               href="/rejoindre"
               variant={overlayMode ? "secondary" : "primary"}
               className={cn(
-                "!px-4 !py-2 nav-caps !text-[0.625rem] !tracking-[0.2em]",
+                "hidden sm:inline-flex !px-3 !py-2 nav-caps !text-[0.625rem] !tracking-[0.2em] sm:!px-4",
                 overlayMode &&
                   "!border-cream !bg-transparent !text-cream hover:!bg-cream/10"
               )}
@@ -91,11 +91,11 @@ export function Nav() {
               aria-expanded={menuOpen}
               aria-controls="site-menu"
             >
-              {menuOpen ? "Fermer" : "Menu"}
+              <span className="hidden sm:inline">{menuOpen ? "Fermer" : "Menu"}</span>
               {menuOpen ? (
-                <X className="h-4 w-4" aria-hidden />
+                <X className="h-5 w-5 sm:h-4 sm:w-4" aria-hidden />
               ) : (
-                <Menu className="h-4 w-4" aria-hidden />
+                <Menu className="h-5 w-5 sm:h-4 sm:w-4" aria-hidden />
               )}
             </button>
           </div>
