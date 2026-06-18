@@ -101,7 +101,7 @@ export default config({
           description: 'Mot du titre à mettre en rouge, ex: "impossible"',
         }),
         heroSubtitle: fields.text({ label: "Hero — sous-titre", multiline: true }),
-        heroCtaPrimary: fields.text({ label: "Hero — bouton principal" }),
+        heroCtaPrimary: fields.text({ label: "Hero — bouton contact (WhatsApp)" }),
         heroCtaSecondary: fields.text({ label: "Hero — lien secondaire" }),
         manifestoEyebrow: fields.text({ label: "Manifesto — eyebrow" }),
         manifestoTitle: fields.text({ label: "Manifesto — titre" }),
@@ -329,7 +329,8 @@ export default config({
       path: "content/blog/*",
       format: "yaml",
       schema: {
-        title: fields.slug({ name: { label: "Titre" } }),
+        title: fields.slug({ name: { label: "Identifiant (URL)" } }),
+        headline: fields.text({ label: "Titre affiché" }),
         excerpt: fields.text({ label: "Extrait", multiline: true }),
         date: fields.date({ label: "Date de publication" }),
         readTime: fields.text({ label: "Temps de lecture" }),

@@ -34,13 +34,12 @@ export function EditorialArticleCard({
       <time className="label-caps text-espresso/45" dateTime={post.date}>
         {date}
       </time>
-      <h3 className="headline-editorial mt-4 text-xl text-espresso transition-colors group-hover:text-terracotta md:text-2xl">
+      <h3 className="headline-editorial mt-4 text-2xl leading-tight text-espresso transition-colors group-hover:text-terracotta md:text-[1.75rem]">
         {post.title}
-        <span className="font-normal text-espresso/75">
-          {" "}
-          {post.excerpt}
-        </span>
       </h3>
+      <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-espresso/65">
+        {post.excerpt}
+      </p>
       <div className="relative mt-8 aspect-[4/3] overflow-hidden bg-espresso/5">
         <Image
           src={image.src}

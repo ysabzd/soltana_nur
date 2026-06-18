@@ -48,13 +48,13 @@ export async function Footer() {
               <WhatsAppCTA
                 settings={settings}
                 label={settings.footerWhatsappLabel}
+                variant="cream"
                 className="!text-sm"
               />
             </div>
           </div>
 
           <div className="lg:col-span-3">
-            <p className="eyebrow mb-4 text-xs text-gold">Navigation</p>
             <ul className="space-y-3">
               {footerNav.map((item) => (
                 <li key={item.href}>
@@ -70,7 +70,6 @@ export async function Footer() {
           </div>
 
           <div className="lg:col-span-4">
-            <p className="eyebrow mb-4 text-xs text-gold">Réseaux</p>
             <div className="flex gap-4">
               <a
                 href={social.instagram}

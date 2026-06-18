@@ -43,6 +43,38 @@ export type BlogPost = {
   content: readonly string[];
 };
 
+function humanizeSlug(slug: string): string {
+  return slug
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+function mapBlogEntry(
+  slug: string,
+  entry: {
+    title: string;
+    headline?: string | null;
+    excerpt: string;
+    date?: string | null;
+    readTime: string;
+    featured?: boolean | null;
+    pullQuote?: string | null;
+    paragraphs?: readonly string[] | null;
+  }
+): BlogPost {
+  return {
+    slug,
+    title: entry.headline?.trim() || humanizeSlug(slug),
+    excerpt: entry.excerpt,
+    date: entry.date ?? "",
+    readTime: entry.readTime,
+    featured: entry.featured ?? false,
+    pullQuote: entry.pullQuote || undefined,
+    content: entry.paragraphs ?? [],
+  };
+}
+
 export async function getSettings(): Promise<Settings> {
   const data = await reader.singletons.settings.read();
   if (!data) throw new Error("Missing content/settings.yaml");
@@ -100,32 +132,14 @@ export async function getTestimonials() {
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
   const posts = await reader.collections.blog.all();
   return posts
-    .map((p) => ({
-      slug: p.slug,
-      title: p.entry.title,
-      excerpt: p.entry.excerpt,
-      date: p.entry.date ?? "",
-      readTime: p.entry.readTime,
-      featured: p.entry.featured ?? false,
-      pullQuote: p.entry.pullQuote || undefined,
-      content: p.entry.paragraphs ?? [],
-    }))
+    .map((p) => mapBlogEntry(p.slug, p.entry))
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 export async function getBlogPost(slug: string): Promise<BlogPost | null> {
   const post = await reader.collections.blog.read(slug);
   if (!post) return null;
-  return {
-    slug,
-    title: post.title,
-    excerpt: post.excerpt,
-    date: post.date ?? "",
-    readTime: post.readTime,
-    featured: post.featured ?? false,
-    pullQuote: post.pullQuote || undefined,
-    content: post.paragraphs ?? [],
-  };
+  return mapBlogEntry(slug, post);
 }
 
 export async function getLatestPosts(count = 3) {

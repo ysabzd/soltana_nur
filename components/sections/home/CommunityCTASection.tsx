@@ -11,7 +11,7 @@ export function CommunityCTASection({
   settings: Settings;
 }) {
   return (
-    <section className="bg-terracotta py-24 text-cream lg:py-32">
+    <section className="bg-gold py-24 text-cream lg:py-32">
       <div className="mx-auto max-w-4xl px-6 text-center lg:px-10">
         <ScrollReveal>
           <h2 className="font-display text-4xl leading-tight md:text-5xl lg:text-6xl text-balance">

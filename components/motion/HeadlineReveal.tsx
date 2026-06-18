@@ -44,7 +44,7 @@ export function HeadlineReveal({
               >
                 <span
                   className={cn(
-                    isHighlight && (light ? "text-red" : "text-red")
+                    isHighlight && (light ? "text-gold" : "text-terracotta")
                   )}
                 >
                   {displayWord.replace(/[.,!?]+$/, "")}

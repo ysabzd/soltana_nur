@@ -8,6 +8,7 @@ const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
   style: ["normal", "italic"],
+  weight: ["400", "600", "700", "800", "900"],
 });
 
 const robotoSlab = Roboto_Slab({

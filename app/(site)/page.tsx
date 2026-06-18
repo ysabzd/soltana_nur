@@ -20,7 +20,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <HeroSection content={home} />
+      <HeroSection content={home} settings={settings} />
       <AboutTeaserSection content={home} />
       <PourQuiSection content={home} />
       <ExperiencesSection content={home} />
